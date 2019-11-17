@@ -1,0 +1,180 @@
+@font-face {
+  font-family: Poppins;
+  src: url('fonts/Poppins-Regular.ttf');
+}
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 8vh;
+  background-color: #5e5bb1;
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: space-around;
+  width: 30%;
+}
+
+.nav-links li {
+  list-style: none;
+}
+
+.nav-links a {
+  color: rgb(226, 226, 226);
+  text-decoration: none;
+  letter-spacing: 3px;
+  font-weight: bold;
+  font-size: 14px;
+  padding: 28px;
+}
+
+.nav-links a:hover {
+  background-color: #5e5bf2;
+}
+
+.burger {
+  display: none;
+}
+
+.burger div {
+  width: 25px;
+  height: 3px;
+  background-color: rgb(226, 226, 226);
+  margin: 5px;
+  transition: all 0.3s ease;
+}
+
+.logo {
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-size: 20px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Poppins;
+}
+
+body {
+  font-size: 16px;
+}
+
+h1 {
+  font-size: 4rem;
+}
+
+h2 {
+  font-size: 3rem;
+}
+
+p {
+  font-size: 2.5rem;
+  font-weight: 300;
+}
+
+section {
+  display: table;
+  width: 100%;
+  text-align: center;
+}
+
+.content {
+  display: inline;
+  vertical-align: middle;
+  padding: 7%;
+}
+
+.element {
+  display: block;
+  position: relative;
+  margin-top: 30vh;
+}
+
+
+.all-screen {
+  height: 100vh;
+}
+
+.blue {
+  background-color: #0774ff;
+}
+
+.red {
+  background-color: #ce1034;
+}
+
+.yellow {
+  background-color: #fcff2c;
+}
+
+
+@media screen and (max-width:1024px){
+  .nav-links {
+    width: 60%;
+  }
+}
+@media screen and (max-width:768px){
+  body{
+    overflow-x: hidden;
+  }
+  .nav-links {
+    position: absolute;
+    right: 0;
+    height: 92vh;
+    top: 8vh;
+    background-color: #5e5bb1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 25%;
+    transform: translateX(100%);
+    transition: transform 0.5s ease-in;
+  }
+  .nav-links li {
+    opacity: 0;
+  }
+
+  .burger {
+    display: block;
+    cursor: pointer;
+  }
+}
+
+.nav-active {
+  transform: translateX(0%);
+}
+
+@keyframes navLinkFade {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+.toggle .line1{
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.toggle .line2{
+  opacity: 0;
+}
+.toggle .line3{
+  transform: rotate(45deg) translate(-5px, -6px);
+
+}
